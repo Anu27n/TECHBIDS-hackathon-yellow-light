@@ -1,12 +1,24 @@
 import numpy as np
 import pickle
 import streamlit as st
+import os
+import pickle
+
+# Get the current directory of your Python script
+current_directory = os.path.dirname(os.path.realpath(__file__))
+
+# Construct the absolute file path using forward slashes
+model_file_path = os.path.join(current_directory, 'trained_model.sav')
+model_file_path2 = os.path.join(current_directory, 'trained_model2.sav')
+# Load the model
+loaded_model = pickle.load(open(model_file_path, 'rb'))
+loaded_model2 = pickle.load(open(model_file_path2, 'rb'))
 
 # Load your first trained model
-loaded_model = pickle.load(open('C:/Users/jaswa/OneDrive/Documents/tam hack complete/streamlit/trained_model.sav', 'rb'))
+#loaded_model = pickle.load(open('C:/Users/jaswa/OneDrive/Documents/tam hack complete/streamlit/trained_model.sav', 'rb'))
 
 # Load your second trained model
-loaded_model2 = pickle.load(open('C:/Users/jaswa/OneDrive/Documents/tam hack complete/streamlit/trained_model2.sav', 'rb'))
+#loaded_model2 = pickle.load(open('C:/Users/jaswa/OneDrive/Documents/tam hack complete/streamlit/trained_model2.sav', 'rb'))
 
 def predict_model(input_data, model):
     # Convert input_data to a numpy array
