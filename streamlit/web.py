@@ -3,10 +3,10 @@ import pickle
 import streamlit as st
 
 # Load your first trained model
-loaded_model = pickle.load(open('streamlit/trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 
 # Load your second trained model
-loaded_model2 = pickle.load(open('streamlit/trained_model2.sav', 'rb'))
+loaded_model2 = pickle.load(open('trained_model2.sav', 'rb'))
 
 def predict_model(input_data, model):
     # Convert input_data to a numpy array
